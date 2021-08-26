@@ -11,7 +11,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/sky_engineer'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://bea59ae666dc83:01993356@us-cdbr-east-04.cleardb.com/heroku_08c3e33a78be528?reconnect=true'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://bea59ae666dc83:01993356@us-cdbr-east-04.cleardb.com/heroku_08c3e33a78be528?reconnect=true'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # without this, get warnings in console
 db = SQLAlchemy(app)
