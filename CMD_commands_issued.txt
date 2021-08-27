@@ -1,0 +1,38 @@
+heroku --version
+cd "C:\Users\victo\PycharmProjects\feedback-app
+dir
+git status
+dir
+git init
+dir
+git status
+heroku login
+heroku create skyfeedback
+git status
+git add .
+git commit -m "initial commit"
+git remote -v
+heroku addons:create cleardb:ignite
+heroku config | grep CLEARDB_DATABASE_URL
+heroku config | findstr CLEARDB_DATABASE_URL
+heroku config --app skyfeedback
+git status
+git add . && git commit -m "Heroku Procfile and runtime files added"
+heroku git:remote -a skyfeedback
+git push heroku master
+heroku open
+heroku run python -m db_create.py
+git status
+git add .
+git commit -m "Added pymysql to prod db uri"
+git push heroku master
+heroku run python -m db_create.py
+git status
+git add .
+git commit -m "Removed reconnect True from prod db uri"
+git push heroku master
+heroku run python -m db_create.py
+heroku run python db_create.py
+heroku config --app skyfeedback
+git status
+doskey /history
