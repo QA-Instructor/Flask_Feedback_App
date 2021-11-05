@@ -4,7 +4,7 @@ from send_mail import send_mail
 
 app = Flask(__name__)
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
@@ -45,7 +45,7 @@ def submit():
         engineer = request.form['engineer']
         rating = request.form['rating']
         comments = request.form['comments']
-        # print(customer, engineer, rating, comments)
+        print(customer, engineer, rating, comments)
         if customer == '' or engineer == '':
             return render_template('index.html', message="Please enter required fields")
         if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
