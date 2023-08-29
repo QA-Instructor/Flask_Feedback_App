@@ -52,7 +52,7 @@ def submit():
             data = Feedback(customer, engineer, rating, comments)
             db.session.add(data)
             db.session.commit()
-            send_mail(customer, engineer, rating, comments)
+            # send_mail(customer, engineer, rating, comments)
             return render_template('success.html')
         return render_template('index.html', message="You have already submitted feedback")
 
